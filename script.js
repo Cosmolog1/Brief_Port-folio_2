@@ -18,10 +18,14 @@ nature.addEventListener("click", () => {
 // Slider
 
 let index = 0;
+// Creation de la fonction mouvement pour le silde
 function moveSlide(direction) {
+  // Recuperation des slides présent dans le html
   const slides = document.querySelector(".slides");
   const totalSlides = document.querySelectorAll(".slide").length;
+  // Parametre les limites de l'index par rapport au slides notament pur revenir a la 1er slide
   index = (index + direction + totalSlides) % totalSlides;
+  // Parametres de vitesse du changement de slide
   slides.style.transform = `translateX(-${index * 100}%)`;
 }
 
@@ -41,3 +45,5 @@ switchThemeBtn.addEventListener("click", () => {
     toogleTheme--;
   }
 });
+
+// Zoom
